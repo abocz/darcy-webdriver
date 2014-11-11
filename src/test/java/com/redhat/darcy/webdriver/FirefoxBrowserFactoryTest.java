@@ -31,7 +31,7 @@ public class FirefoxBrowserFactoryTest {
     public void shouldBeFireFoxin() {
 
         FirefoxBrowserFactory browserFactory = new FirefoxBrowserFactory();
-        DesiredCapabilities cap=new DesiredCapabilities();
+        DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("webdriver_firefox_port",7046);
         browserFactory = browserFactory.desiring(cap);
         WebDriverBrowser browser = (WebDriverBrowser) browserFactory.newBrowser();
