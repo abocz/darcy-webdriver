@@ -4,6 +4,20 @@ jdk:
 
 before_install:
   - git clone -b travis `git config --get remote.origin.url` target/travis
+  # Repos
+  - sudo apt-add-repository "deb http://deb.opera.com/opera/ stable non-free"
+  - sudo apt-add-repository "deb http://dl.google.com/linux/chrome/deb/ stable main"
+  # Remove "deb-src" repos added from apt-add-repository, because it doesn't exist online
+  - sudo sed -i s/deb-src.*opera.*//g /etc/apt/sources.list
+  - sudo sed -i s/deb-src.*google.*//g /etc/apt/sources.list
+  # Add apt-keys for checking the packages
+  - wget -O - http://deb.opera.com/archive.key | sudo apt-key add -
+  - wget -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+  # Mke sure
+  - sudo apt-get update -qq
+  # Install the browsers
+  - sudo apt-get install -y chromium-browser opera firefox google-chrome-stable
+  # xvfb
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
 
