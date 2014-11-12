@@ -15,7 +15,7 @@ after_success:
 branches:
   only:
   - master
-  - add-browser-travis-wip
+  - add-browsers-travis-wip
 
 env:
   global:
