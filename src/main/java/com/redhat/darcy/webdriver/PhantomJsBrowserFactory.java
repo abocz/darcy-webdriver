@@ -21,9 +21,10 @@ public class PhantomJsBrowserFactory extends WebDriverBrowserFactory<PhantomJsBr
     public Browser newBrowser() {
         PhantomJSDriver driver;
 
-        if (service != null) {
-            driver = new PhantomJSDriver(service);
-        } else if (capabilities != null) {
+        if (capabilities != null) {
+            if (service != null) {
+                driver = new PhantomJSDriver(service, capabilities);
+            }
             driver = new PhantomJSDriver(capabilities);
         } else {
             driver = new PhantomJSDriver();
