@@ -10,11 +10,12 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assume.assumeNotNull;
+import static org.junit.Assume.assumeTrue;
 
 public class FirefoxBrowserFactoryTest {
     @Before
     public void checkForDriver() {
-        assumeNotNull(System.getProperty("webdriver.firefox.driver"));
+        assumeTrue(System.getProperty("java.class.path").contains("firefox-driver"));
     }
 
     @Test
