@@ -13,7 +13,7 @@ import static org.junit.Assume.assumeNotNull;
 
 public class ChromeBrowserFactoryTest {
     @Before
-    public void setupCheck() {
+    public void checkForDriver() {
         assumeNotNull(System.getProperty("webdriver.chrome.driver"));
     }
 

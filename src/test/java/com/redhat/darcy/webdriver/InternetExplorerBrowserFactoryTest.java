@@ -16,9 +16,8 @@ import static org.junit.Assume.assumeTrue;
 
 public class InternetExplorerBrowserFactoryTest {
     @Before
-    public void setupCheck() {
-        Platform current = Platform.getCurrent();
-        assumeTrue(Platform.WINDOWS.is(current));
+    public void checkForDriver() {
+        assumeTrue(Platform.getCurrent().is(Platform.WINDOWS));
         assumeNotNull(System.getProperty("webdriver.ie.driver"));
     }
 

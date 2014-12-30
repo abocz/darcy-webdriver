@@ -8,7 +8,9 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertThat;
 
+
 public class HtmlUnitBrowserFactoryTest {
+
     @Test
     public void shouldBeInstanceOfUntargetedHtmlUnitDriver() {
         WebDriverBrowserFactory browserFactory = new HtmlUnitBrowserFactory();

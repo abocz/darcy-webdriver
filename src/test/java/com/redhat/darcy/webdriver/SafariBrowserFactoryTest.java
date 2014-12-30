@@ -16,8 +16,7 @@ import static org.junit.Assume.assumeTrue;
 public class SafariBrowserFactoryTest {
     @Before
     public void setupCheck() {
-        Platform current = Platform.getCurrent();
-        assumeTrue(Platform.MAC.is(current));
+        assumeTrue(Platform.getCurrent().is(Platform.WINDOWS));
         assumeNotNull(System.getProperty("webdriver.safari.driver"));
     }
 

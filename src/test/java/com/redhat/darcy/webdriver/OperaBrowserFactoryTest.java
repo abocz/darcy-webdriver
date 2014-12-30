@@ -13,9 +13,10 @@ import static org.junit.Assume.assumeNotNull;
 
 public class OperaBrowserFactoryTest {
     @Before
-    public void setupCheck() {
+    public void checkForDriver() {
         assumeNotNull(System.getProperty("webdriver.opera.driver"));
     }
+
     @Test
     public void shouldBeInstanceOfUntargetedOperaDriver() {
         WebDriverBrowserFactory browserFactory = new OperaBrowserFactory();
