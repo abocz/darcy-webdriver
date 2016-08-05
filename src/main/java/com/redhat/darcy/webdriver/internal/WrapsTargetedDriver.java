@@ -22,6 +22,5 @@ package com.redhat.darcy.webdriver.internal;
 import org.openqa.selenium.internal.WrapsDriver;
 
 public interface WrapsTargetedDriver extends WrapsDriver {
-    @Override
-    TargetedWebDriver getWrappedDriver();
+    TargetedWebDriver getWrappedTargetedDriver();
 }
